@@ -1,0 +1,13 @@
+*.crf
+*.o
+*.d
+*.__i
+*.map
+*.rar
+*.hex
+*.cache
+*.mxproject
+*.json
+*.uvoptx
+*.Inp
+*.lst
