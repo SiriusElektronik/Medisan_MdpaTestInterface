@@ -21,13 +21,28 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-C:\Users\Sirius\Desktop\Mdpa_Test_Interface\MDK-ARM\Mdpa_Test_Interface.uvprojx
+C:\Github_Dir\Medisan_MdpaTestInterface\MDK-ARM\Mdpa_Test_Interface.uvprojx
 Project File Date:  11/17/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Mdpa_Test_Interface'
-"Mdpa_Test_Interface\Mdpa_Test_Interface.axf" - 0 Error(s), 0 Warning(s).
+compiling swl_TestFunctions.c...
+..\swl_TestFunctions\swl_TestFunctions.h(17): warning:  #1-D: last line of file ends without a newline
+  void swl_SendCmd(swl_CommandCodes cmd, swl_ProcessCodes process);
+..\swl_TestFunctions\swl_TestFunctions.c(65): warning:  #1-D: last line of file ends without a newline
+  }
+..\swl_TestFunctions\swl_TestFunctions.c: 2 warnings, 0 errors
+compiling swl_Application.c...
+../swl_TestFunctions/swl_TestFunctions.h(17): warning:  #1-D: last line of file ends without a newline
+  void swl_SendCmd(swl_CommandCodes cmd, swl_ProcessCodes process);
+..\swl_Application\swl_Application.c(68): warning:  #111-D: statement is unreachable
+  		hardwareControl.UniqueId1 = 0xFFFFFFFF;
+..\swl_Application\swl_Application.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=25932 RO-data=524 RW-data=568 ZI-data=8696  
+FromELF: creating hex file...
+"Mdpa_Test_Interface\Mdpa_Test_Interface.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +65,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

@@ -15,7 +15,7 @@
 #define TransmittBufferSize 8
 extern swl_HardwareControl hardwareControl;
 uint8_t TransmittBuffer[TransmittBufferSize];
-
+uint16_t PeriodTime = 500;
 void swl_InfoFunction(swl_CommandCodes cmd, swl_ProcessCodes process)
 {
 	uint8_t count = 0;
@@ -26,7 +26,7 @@ void swl_InfoFunction(swl_CommandCodes cmd, swl_ProcessCodes process)
 		while(hardwareControl.UniqueId1 == 0xFFFFFFFF && hardwareControl.UniqueId2 == 0xFFFFFFFF && hardwareControl.UniqueId3 == 0xFFFFFFFF)
 		{
 			swl_UartTransmitt(TransmittBuffer, TransmittBufferSize);
-			osDelay(200);
+			osDelay(PeriodTime);
 			count++;
 			if(count > 20)
 			{
@@ -47,7 +47,7 @@ void swl_TestFuction(swl_TestResults *hardware, swl_CommandCodes cmd, swl_Proces
 	while(*hardware == None)
 	{
 		swl_UartTransmitt(TransmittBuffer, TransmittBufferSize);
-		osDelay(200);
+		osDelay(PeriodTime);
 		count++;
 		if(count > 20)
 		{

@@ -26,6 +26,7 @@ uint32_t transmittcounter = 0;
 uint8_t datasend = FALSE;
 uint16_t AD_RES = 0;
 extern uint8_t pwmvalue;
+extern uint16_t PeriodTime;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
@@ -43,6 +44,27 @@ void swl_ApplicationTask(const void * argv)
 	swl_InitServoControl();
     for(;;)
     {	
+		 //Debug Codes
+		 PeriodTime = 500;
+		 while(TRUE)
+		 {
+			swl_InfoFunction(Info, UniqueID_Control);
+			swl_TestFuction(&hardwareControl.Communication, Test, Communication_Control);
+			swl_TestFuction(&hardwareControl.InputVoltage, Test, Input_Voltage);
+			swl_TestFuction(&hardwareControl.RegulatorVoltage, Test, Regulator_Voltage);
+			swl_TestFuction(&hardwareControl.Motor, Test, Motor);
+			swl_TestFuction(&hardwareControl.Encoder, Test, Encoder);
+			swl_TestFuction(&hardwareControl.PressureSensor, Test, Pressure_Sensor);
+			swl_TestFuction(&hardwareControl.FlowSensor, Test, Flow_Sensor);
+			swl_TestFuction(&hardwareControl.Heater, Test, Heater);
+			swl_TestFuction(&hardwareControl.SdCard, Test, SdCard);
+			swl_TestFuction(&hardwareControl.Button1, Test, Button1);
+			swl_TestFuction(&hardwareControl.Button2, Test, Button2);
+			swl_TestFuction(&hardwareControl.EncoderButton, Test, Encoder_Button);
+		 }
+		 //----------------------------------
+		 
+		 
 		hardwareControl.UniqueId1 = 0xFFFFFFFF;
 		hardwareControl.UniqueId2 = 0xFFFFFFFF;
 		hardwareControl.UniqueId3 = 0xFFFFFFFF;
